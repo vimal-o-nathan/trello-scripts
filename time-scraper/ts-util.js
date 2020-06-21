@@ -65,8 +65,8 @@ tsUtil.createProjectMap = (cardResponse) => {
     for (i=0; i < cardResponse.length; i++) {
         try{
             var projectTimeSplit = cardResponse[i].desc.split('\n');
-            var project = projectTimeSplit[0].replace(/Project:? ?/g, '');
-            var time = parseFloat(projectTimeSplit[1].replace(/Time:? ?/g, ''));
+            var project = projectTimeSplit[0].replace(/Project:? ?/, '');
+            var time = parseFloat(projectTimeSplit[1].replace(/Time:? ?/, ''));
         } catch(ex) {
             var project = "Problematic Cards";
             var time = 0;

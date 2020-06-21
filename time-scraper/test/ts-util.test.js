@@ -203,4 +203,28 @@ describe('Testing that Project Map parses cards correctly', () => {
 
         assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
     });
+
+
+
+
+    it('Project description that contains the word Project isn\'t replaced', () => {
+        var stubCardResponse = [
+            {
+                "desc": "Project: Project1\nTime: 2\nSome other text description",
+                "name": "Stupid Project Task 1"
+            },
+            {
+                "desc": "Project: Project1\nTime1.25",
+                "name": "Stupid Project Task 2"
+            }
+        ];
+        var expectedProjectMap = {
+            "Project1": {
+                "time": 3.25,
+                "tasks": "- Stupid Project Task 1\n- Stupid Project Task 2\n"
+            }
+        };
+
+        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+    });
 })
