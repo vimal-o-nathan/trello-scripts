@@ -3,3 +3,6 @@ scriptSettings.json
 
 # ignore vscode config folder folder
 .vscode
+
+# Ignore any VS Code workspaces
+*.code-workspace
