@@ -1,6 +1,8 @@
 # time-scraper
 A Script to scrape a tasks name, project and time spent. This information, once pulled from Trello, can be used to populate a report indicating the tasts for a day that were part of a single project, as well the time spent throughout the day on that project.
 
+## Usage Instructions
+
 To use this there are a couple of things to note:
 
 1. The title of the card is to be the task as it will appear when copied to a timesheet
