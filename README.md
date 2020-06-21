@@ -1,5 +1,11 @@
 # trello-scripts
 
+## Install Node.js
+
+The scripts in this project utilize the Node.js runtime, and in order to run them the user will need to do the following:
+
+- Install [Node.js](https://nodejs.org/)
+
 ## Setting up REST API Authentication
 
 **trello-scripts** utilizes Trello's REST API in the various scripts contained in the sub-directories of this project. In order to utilize the REST API, you will need to do the following:
