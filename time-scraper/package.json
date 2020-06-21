@@ -1,0 +1,15 @@
+{
+  "name": "time-scraper",
+  "version": "1.0.0",
+  "description": "A Script to scrape a tasks name, project and time spent. This information, once pulled from Trello, can be used to populate a report indicating the tasts for a day that were part of a single project, as well the time spent throughout the day on that project.",
+  "main": "time-scraper.js",
+  "dependencies": {
+    "node-fetch": "2.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}

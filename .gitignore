@@ -1,0 +1,5 @@
+# Don't track changes in time-scraper-settings.json (to prevent someone from accidentally checking in apiKey and token)
+scriptSettings.json
+
+# ignore vscode config folder folder
+.vscode
