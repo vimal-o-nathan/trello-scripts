@@ -1,0 +1,11 @@
+{
+  "name": "named-label-time-scraper",
+  "version": "1.0.0",
+  "description": "A Script to Scrape times from cards and group them according to the named label associated with it",
+  "main": "label-scraper.js",
+  "author": "vimal-o-nathan",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  }
+}
