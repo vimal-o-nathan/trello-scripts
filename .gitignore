@@ -1,5 +1,5 @@
-# Don't track changes in time-scraper-settings.json (to prevent someone from accidentally checking in apiKey and token)
-scriptSettings.json
+# Don't track changes in to JSON file containing API Key and Token (to prevent someone from accidentally checking in apiKey and token)
+trelloAuthSettings.json
 
 # ignore vscode config folder folder
 .vscode

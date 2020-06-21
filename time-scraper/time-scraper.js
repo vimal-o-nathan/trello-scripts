@@ -1,7 +1,7 @@
 // This code sample uses the 'node-fetch' library:
 // https://www.npmjs.com/package/node-fetch
 const fetch = require('node-fetch');
-const scriptSettings = require('./scriptSettings.json');
+const scriptSettings = require('../trelloAuthSettings.json');
 const tsUtil = require('./ts-util');
 const readLine = require('readline').createInterface({
     input: process.stdin,

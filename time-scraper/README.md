@@ -18,16 +18,3 @@ To use this there are a couple of things to note:
         Time: 0.25
         ```
         * In this case the ${projectName} is "IOM Sustain" and the time spent is 15 minutes
-1. Create a file names _scriptSettings.json_ in this directory, then add the following to this file:
-    ```
-    {
-        "apiKey": "${apiKeyValue}",
-        "token": "${token}"
-    }
-    ```
-
-    * Where:
-        * _${apiKey}_ is your Trello Developer API Key retrieved from the following page:
-            https://trello.com/app-key
-        * _${token}_ is your token retrieved from the "generate a Token" link in the page above (where Developer API Key is retrieved)
-    * **DO NOT UNDER ANY CIRCUMSTANCE** commit your API Key and Token to GitHub. scriptSettings.json has been added to the .gitignore file to prevent this.
