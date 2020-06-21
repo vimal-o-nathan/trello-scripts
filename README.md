@@ -19,8 +19,10 @@ The scripts in this project utilize the Node.js runtime, and in order to run the
         ```
 - Downloading zip file from Github:
     - In Github, click the 'Clone or download' button:
+
     ![Clone or download button](img/main/cloneOrDownload.png)
     - Then click the 'Download ZIP' button:
+    
     ![Download ZIP](/img/main/downloadZip.png)
     - Extract the zip
     - Copy the extracted folder to the desired location
