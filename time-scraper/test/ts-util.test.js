@@ -99,7 +99,7 @@ describe('Testing that Project Map parses cards correctly', () => {
                 "time": 3.25,
                 "tasks": "- Stupid Project Task 1\n- Stupid Project Task 2\n"
             },
-            "Problematic Cards": {
+            "Failed To Parse Cards": {
                 "time": 0,
                 "tasks": "- Smart Project Task 1\n"
             }
