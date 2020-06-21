@@ -23,4 +23,4 @@
 
 In order to utilize one of the sub-projects, please go to the following link:
 
-[time-scraper](time-scraper/README.md)
+- [time-scraper](time-scraper/README.md)
