@@ -1,4 +1,5 @@
 const assert = require('assert');
+const textReportUtil = require('../../common/text-report-util');
 const tsUtil = require('../ts-util');
 
 describe('Testing that Project Map parses cards correctly', () => {
@@ -17,7 +18,10 @@ describe('Testing that Project Map parses cards correctly', () => {
         };
 
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -41,7 +45,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -73,7 +80,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -105,7 +115,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -129,7 +142,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -153,7 +169,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -177,7 +196,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -201,7 +223,10 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 
 
@@ -225,6 +250,9 @@ describe('Testing that Project Map parses cards correctly', () => {
             }
         };
 
-        assert.deepEqual(expectedProjectMap, tsUtil.createProjectMap(stubCardResponse));
+        assert.deepEqual(expectedProjectMap, textReportUtil.createTextReportMap(
+            tsUtil.projectMapObjectGenerator, 
+            stubCardResponse
+        ));
     });
 })
