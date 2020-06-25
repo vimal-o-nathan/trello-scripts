@@ -5,7 +5,11 @@ const readLine = require('readline').createInterface({
 });
 
 
-trelloRestUtil.getListOfBoards = (fetch, scriptSettings, createTextReport, projectMapObjectGenerator) => {
+trelloRestUtil.getListOfBoards = (fetch, 
+                                  scriptSettings, 
+                                  createTextReport, 
+                                  projectMapObjectGenerator) => {
+
     fetch('https://api.trello.com/1/members/me/boards?key=' + scriptSettings.apiKey + '&token=' + scriptSettings.token + '&filter=open', {
         method: 'GET',
         headers: {
@@ -16,7 +20,11 @@ trelloRestUtil.getListOfBoards = (fetch, scriptSettings, createTextReport, proje
         return response.text();
     })
     .then(text => {
-        trelloRestUtil.letUserSelectBoard(fetch, scriptSettings, createTextReport, projectMapObjectGenerator, text);
+        trelloRestUtil.letUserSelectBoard(fetch, 
+                                          scriptSettings, 
+                                          createTextReport, 
+                                          projectMapObjectGenerator, 
+                                          text);
     })
     .catch(err => console.error(err));
 }
@@ -24,7 +32,12 @@ trelloRestUtil.getListOfBoards = (fetch, scriptSettings, createTextReport, proje
 
 
 
-trelloRestUtil.letUserSelectBoard = (fetch, scriptSettings, createTextReport, projectMapObjectGenerator, boardResponseText) => {
+trelloRestUtil.letUserSelectBoard = (fetch, 
+                                    scriptSettings, 
+                                    createTextReport, 
+                                    projectMapObjectGenerator, 
+                                    boardResponseText) => {
+
     const boardResponse = JSON.parse(boardResponseText);
     var boardSelectionText = createBoardSelectionText(boardResponse);
     
@@ -50,18 +63,35 @@ function createBoardSelectionText(boardResponse) {
 
 
 
-trelloRestUtil.retrieveListsOnBoard = (fetch, scriptSettings, createTextReport, projectMapObjectGenerator, boardId) => {
-    fetch('https://api.trello.com/1/boards/' + boardId + '/lists' + '?key=' + scriptSettings.apiKey + '&token=' + scriptSettings.token + '&filter=open', {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
+trelloRestUtil.retrieveListsOnBoard = (fetch, 
+                                       scriptSettings, 
+                                       createTextReport, 
+                                       projectMapObjectGenerator, 
+                                       boardId) => {
+    
+    fetch('https://api.trello.com/1/boards/' + 
+            boardId + 
+            '/lists?key=' + 
+            scriptSettings.apiKey + 
+            '&token=' + 
+            scriptSettings.token + 
+            '&filter=open', 
+            {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }
+    )
     .then(response => {
         return response.text();
     })
     .then(text => {
-        trelloRestUtil.letUserSelectList(fetch, scriptSettings, createTextReport, projectMapObjectGenerator, text);
+        trelloRestUtil.letUserSelectList(fetch, 
+                                         scriptSettings, 
+                                         createTextReport, 
+                                         projectMapObjectGenerator, 
+                                         text);
     })
     .catch(err => console.error(err));
 }
@@ -69,13 +99,22 @@ trelloRestUtil.retrieveListsOnBoard = (fetch, scriptSettings, createTextReport, 
 
 
 
-trelloRestUtil.letUserSelectList = (fetch, scriptSettings, createTextReport, projectMapObjectGenerator, listResponseText) => {
+trelloRestUtil.letUserSelectList = (fetch, 
+                                    scriptSettings, 
+                                    createTextReport, 
+                                    projectMapObjectGenerator, 
+                                    listResponseText) => {
+
     const listResponse = JSON.parse(listResponseText);
     var listSelectionText = createListSelectionText(listResponse);
 
     readLine.question(listSelectionText, value => {
         console.clear();
-        trelloRestUtil.retrieveCardsInList(fetch, scriptSettings, createTextReport, projectMapObjectGenerator, listResponse[value-1].id);
+        trelloRestUtil.retrieveCardsInList(fetch, 
+                                           scriptSettings, 
+                                           createTextReport, 
+                                           projectMapObjectGenerator, 
+                                           listResponse[value-1].id);
     });
 }
 
@@ -95,13 +134,26 @@ function createListSelectionText(listResponse) {
 
 
 
-trelloRestUtil.retrieveCardsInList = (fetch, scriptSettings, createTextReport, projectMapObjectGenerator, listId) => {
-    fetch('https://api.trello.com/1/lists/' + listId + '/cards' + '?key=' + scriptSettings.apiKey + '&token=' + scriptSettings.token + '&filter=open', {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
+trelloRestUtil.retrieveCardsInList = (fetch, 
+                                      scriptSettings, 
+                                      createTextReport, 
+                                      projectMapObjectGenerator, 
+                                      listId) => {
+
+    fetch('https://api.trello.com/1/lists/' + 
+            listId + 
+            '/cards?key=' + 
+            scriptSettings.apiKey + 
+            '&token=' + 
+            scriptSettings.token + 
+            '&filter=open', 
+            {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }
+    )
     .then(response => {
         return response.text();
     })
